@@ -21,14 +21,14 @@ public class Autor {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
+    @Column(name="aut_id")
     private Long id;
     
-    @Column(length=50)
-    private String nombre="";
+    @Column(length=50,name="aut_nombre")
+    private String nombre;
     
-    @Column(length=50)
-    private String apellido="";
+    @Column(length=50,name="aut_apellido")
+    private String apellido;
     
     
     

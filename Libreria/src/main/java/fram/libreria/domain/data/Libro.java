@@ -25,11 +25,11 @@ public class Libro {
     private Long id;
     
     
-    @Column(length=50)
-    private String titulo="";
+    @Column(length=50, name="lb_titulo")
+    private String titulo;
     
-    @Column(length=20)
-    private String ano="";
+    @Column(length=20, name="lb_ano")
+    private String ano;
    
     
     
