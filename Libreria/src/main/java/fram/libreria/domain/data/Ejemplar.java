@@ -21,18 +21,14 @@ import javax.persistence.Table;
 public class Ejemplar {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
-    private Long id;
+    @Column(length=50,name="ej_icbn")
+    private String icb;
     
-    @Column(length=50)
-    private String icb="";
-    
-    @Column(length=20)
+    @Column(length=20,name="ej_ano")
     private String ano="";
     
-    @Column(length=50)
-    private Long cantidad;
+    @Column(length=50,name="ej_cantidad")
+    private Long cantidad ;
     
         
 }
