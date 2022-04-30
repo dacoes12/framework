@@ -28,7 +28,7 @@ public class Autor {
     private String nombre;
     
     @Column(length=50,name="aut_apellido")
-    private String apellido;
+    private String apellido ;
     
     
     

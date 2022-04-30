@@ -28,7 +28,7 @@ public class Ejemplar {
     private String ano="";
     
     @Column(length=50,name="ej_cantidad")
-    private Long cantidad;
+    private Long cantidad ;
     
         
 }

@@ -29,7 +29,7 @@ public class Libro {
     private String titulo;
     
     @Column(length=20, name="lb_ano")
-    private String ano;
+    private String ano ;
    
     
     

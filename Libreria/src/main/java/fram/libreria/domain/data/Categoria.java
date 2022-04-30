@@ -28,6 +28,6 @@ public class Categoria {
     private Long id;
     
     @Column(length = 50,name="cat_nombre")
-    private String nombre;
+    private String nombre ;
     
 }
