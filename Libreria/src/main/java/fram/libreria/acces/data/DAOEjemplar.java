@@ -4,10 +4,13 @@
  */
 package fram.libreria.acces.data;
 
+import fram.libreria.domain.data.Ejemplar;
+import org.springframework.data.jpa.repository.JpaRepository;
+
 /**
  *
  * @author ASUS
  */
-public class x {
+public interface DAOEjemplar extends JpaRepository<Ejemplar, Long>{
     
 }

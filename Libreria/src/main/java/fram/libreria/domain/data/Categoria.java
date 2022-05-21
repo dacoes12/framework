@@ -4,6 +4,7 @@
  */
 package fram.libreria.domain.data;
 
+import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,7 +12,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import lombok.Data;
 
@@ -23,7 +25,7 @@ import lombok.Data;
 @Entity
 @Data
 @Table(name="Categoria")
-public class Categoria {
+public class Categoria implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,8 +35,12 @@ public class Categoria {
     @Column(length = 50,name="cat_nombre")
     private String nombre ;
     
-    @OneToMany
-    @JoinColumn(name="id")
-    private List<Libro> libros;
+    @ManyToMany
+    @JoinTable(
+            name = "librocategoria", 
+            joinColumns = @JoinColumn(name = "CAT_ID"), 
+            inverseJoinColumns = @JoinColumn(name = "LB_ID")
+    )
+    private List<Libro> librosCateg;  
     
 }
