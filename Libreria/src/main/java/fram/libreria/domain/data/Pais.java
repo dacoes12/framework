@@ -4,45 +4,37 @@
  */
 package fram.libreria.domain.data;
 
+import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import lombok.Data;
 
 /**
  *
- * @author David Escobar
+ * @author ASUS
  */
+
 @Entity
-@Table(name = "libro")
+@Table(name = "Pais")
 @Data
-public class Libro{
-   
+public class Pais implements Serializable{
+    private static final long serialVersionUID = 1L; 
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="lb_id")
-    private Long id;
+    @Column(name="idPais")
+    private Long idPais; 
     
-    @Column(length=50, name="lb_titulo")
-    private String titulo;
+    @Column(name="nombre")
+    private String nombre;  
     
-    @Column(length=20, name="lb_ano")
-    private String ano ;
-    
-    @OneToMany
-    @JoinColumn(name="lb_id")
-    private List<Ejemplar> ejemplares;
-    
-    @ManyToMany(mappedBy = "librosAutor")
-    private List<Autor> authors;  
-    
-    @ManyToMany(mappedBy = "librosCateg")
-    private List<Categoria> categorias;  
+    @OneToMany(mappedBy="autor_pais")
+    private List<Autor> autores_pais;
+
 }

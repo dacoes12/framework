@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <title>Inicio</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        
+        <header th:replace="layout/plantilla :: header"></header>
+        
+        <a th:href="@{/autores/agregar}">[[#{autor.crear}]]</a>
+        <br/>
+        <br/>
+        <div th:if="${autores!=null or !autores.empty}">
+            <table border="1">
+                <tr>
+                    <th>[[#{autor.nombre}]]</th>
+                    <th>[[#{autor.apellido}]]</th>
+                    <th>[[#{autor.pais}]]</th>
+                    <th>[[#{accion.editar}]]</th>
+                    <th>[[#{accion.eliminar}]]</th>
+                </tr>
+
+                <tr th:each="autor : ${autores}">
+                    <td th:text="${autor.nombre}">Mostrar nombre </td>
+                    <td th:text="${autor.apellido}">Mostrar apellido </td>
+                    <td th:text="${autor.autor_pais.nombre}">Mostrar pais </td>
+                    <td> 
+                        <a th:href="@{/autores/editar/} + ${autor.id}"/> [[#{accion.editar}]]
+                    </td> <!-- Path variable  th:text ="#{accion.editar} "-->
+                    <td> 
+                        <a th:href="@{/autores/eliminar(id=${autor.id})}"/> [[#{accion.eliminar}]]
+                    </td> <!-- QueryParamater  -->
+                </tr>
+
+            </table>
+        </div>
+        <div th:if="${autores==null or autores.isEmpty()}">
+            [[#{autores.lista-autores}]]
+        </div>
+        
+    </body>
+</html>

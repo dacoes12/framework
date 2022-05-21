@@ -5,14 +5,13 @@
 package fram.libreria.domain.data;
 
 
-import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import lombok.Data;
 
 /**
  *
@@ -21,11 +20,12 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Ejemplar")
+@Data
 public class Ejemplar {
     
     @Id
     @Column(length=50,name="ej_icbn")
-    private String icb;
+    private String icbn;
     
     @Column(length=20,name="ej_ano")
     private String ano="";
@@ -33,9 +33,8 @@ public class Ejemplar {
     @Column(length=50,name="ej_cantidad")
     private Long cantidad;
     
-    @OneToOne
-    @JoinColumn(name="id")
-    private List<Libro> libros;
+    @ManyToOne
+    @JoinColumn(name="LB_ID", nullable=false)
+    private Libro libro;  
     
-        
 }

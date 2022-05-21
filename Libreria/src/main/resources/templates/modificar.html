@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" 
+      xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>[[#{autor.formulario}]]</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        
+        <header th:replace="layout/plantilla :: header"></header>
+        
+        
+        <h2>[[#{autor.formulario}]]</h2>
+        <a th:href="@{/autores}">[[#{accion.regresar}]]</a>
+        <br/>
+        <form th:action="@{/autores/guardar}" method="POST" th:object="${autor}">
+            
+            <!-- variable oculta que sirve para identificar si es un objeto a crear (idNulo) -->
+            <!-- si es un objeto a editar (update - id no nulo) -->
+            <input type="hidden" name="id_autor" th:field="*{id}"/>      
+            <br/>
+            <label for="nombre">[[#{autor.nombre}]]:</label>
+            <input type="text" name="nombre" th:field="*{nombre}"/>
+            <span th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}">Error nombre</span>
+            <br/>
+            <label for="apellido">[[#{autor.apellido}]]:</label>
+            <input type="text" name="apellido" th:field="*{apellido}"/>
+            <span th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}">Error apellido</span>
+            <br/>
+            
+            <label for="paisorigen">Pais de origen: </label>
+            <select id="autor_pais" name="autor_pais">
+                
+                
+                <option th:if="${autor_pais == null}"
+                        th:selected="true"
+                        th:disabled="disabled"
+                        >Seleccione un país</option>
+                
+                <option th:if="${autor_pais != null}"
+                        th:selected="true"
+                        th:value="${autor_pais.idPais}" 
+                        th:text="${autor_pais.nombre}"
+                        />
+                
+                <option th:each="pais:${paises}" 
+                        th:value="${pais.idPais}" 
+                        th:text="${pais.nombre}"
+                        />
+            </select>
+            
+            <br/>
+            <!--value="Guardar"-->
+            <input type="submit" name="guardar" th:value="#{accion.guardar}"/>
+            
+        </form>
+        <br/>
+        
+        <!--
+        <footer th:replace="layout/plantilla :: footer"></footer>
+        -->
+        
+    </body>
+</html>
