@@ -83,6 +83,8 @@ public class AutorController {
     @PostMapping("/guardar")
     public String guardar(@Valid Autor autor, Errors errores, Model model) {
         if (errores.hasErrors()) {
+            var lista = paisService.listar();
+            model.addAttribute("paises", lista);
             return "modificar";
         }
         autorService.save(autor);

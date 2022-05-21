@@ -16,6 +16,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import lombok.Data;
 
 /**
@@ -39,12 +41,15 @@ public class Autor implements Serializable {
     @Column(name="aut_id")
     private Long id;
     
+    @NotEmpty
     @Column(length=50,name="aut_nombre")
     private String nombre;
     
+    @NotEmpty
     @Column(length=50,name="AUT_APELLIDO")
     private String apellido ;
     
+    @NotNull
     @ManyToOne
     @JoinColumn(name="aut_pais", nullable=false)
     private Pais autor_pais;  
