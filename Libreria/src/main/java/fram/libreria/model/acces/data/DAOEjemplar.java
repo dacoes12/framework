@@ -8,8 +8,9 @@ import fram.libreria.model.domain.data.Ejemplar;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
- *
- * @author ASUS
+ * interface DAOEjemplar - mapea un Crud básico para la tabla Ejemplar 
+ * @author Collazos Escobar David, Andrés David Muñoz 
+ *         dacoes@unicauca.edu.co, andresdmunoz@unicauca.edu.co
  */
 public interface DAOEjemplar extends JpaRepository<Ejemplar, Long>{
     

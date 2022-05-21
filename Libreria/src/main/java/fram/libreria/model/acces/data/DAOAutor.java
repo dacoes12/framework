@@ -8,8 +8,9 @@ import fram.libreria.model.domain.data.Autor;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
- *
- * @author ASUS
+ * interface DAOAutor - mapea un Crud básico para la tabla autor 
+ * @author Collazos Escobar David, Andrés David Muñoz 
+ *         dacoes@unicauca.edu.co, andresdmunoz@unicauca.edu.co
  */
 public interface DAOAutor extends JpaRepository<Autor, Long>{
     

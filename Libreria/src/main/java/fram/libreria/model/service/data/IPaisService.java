@@ -7,15 +7,40 @@ package fram.libreria.model.service.data;
 import fram.libreria.model.domain.data.Pais;
 import java.util.List;
 
-
 /**
+ * interface IPaisService
  *
- * @author ASUS
+ * @author Collazos Escobar David, Andrés David Muñoz dacoes@unicauca.edu.co,
+ * andresdmunoz@unicauca.edu.co
  */
-
 public interface IPaisService {
-    public Pais find(Pais pais);  
-    public List<Pais> listar();  
+
+    /**
+     * Permite buscar un pais por su id
+     *
+     * @param pais
+     * @return Pais
+     */
+    public Pais find(Pais pais);
+
+    /**
+     * Retorna una lista de autores
+     *
+     * @return List Pais
+     */
+    public List<Pais> listar();
+
+    /**
+     * Borra un autor por mapeo
+     *
+     * @param autor
+     */
     public void delete(Pais pais);
-    public void save(Pais pais); 
+
+    /**
+     * Retorna una lista de autores
+     *
+     * @return List Autor
+     */
+    public void save(Pais pais);
 }

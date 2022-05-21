@@ -19,9 +19,11 @@ import javax.persistence.Table;
 import lombok.Data;
 
 /**
- *
- * @author David Escobar
+ * Clase Autor 
+ * @author Collazos Escobar David, Andrés David Muñoz 
+ *         dacoes@unicauca.edu.co, andresdmunoz@unicauca.edu.co
  */
+
 @Entity
 @Table(name = "Autor")
 @Data
@@ -29,6 +31,9 @@ public class Autor implements Serializable {
     
     private static final long serialVersionUID = 1L; 
     
+    /**
+     *  Atributos
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="aut_id")

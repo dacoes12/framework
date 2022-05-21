@@ -17,14 +17,20 @@ import javax.persistence.Table;
 import lombok.Data;
 
 /**
- *
- * @author David Escobar
+ * Class Libro
+ * @author Collazos Escobar David, Andrés David Muñoz 
+ *         dacoes@unicauca.edu.co, andresdmunoz@unicauca.edu.co
  */
+
 @Entity
 @Table(name = "libro")
 @Data
 public class Libro{
-   
+    
+    /**
+     * Atributos 
+     */
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="lb_id")

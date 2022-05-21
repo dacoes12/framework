@@ -8,8 +8,9 @@ import fram.libreria.model.domain.data.Pais;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
- *
- * @author ASUS
+ * interface DAOPais - mapea un Crud básico para la tabla Pais 
+ * @author Collazos Escobar David, Andrés David Muñoz 
+ *         dacoes@unicauca.edu.co, andresdmunoz@unicauca.edu.co
  */
 public interface DAOPais extends JpaRepository<Pais, Long>{
     

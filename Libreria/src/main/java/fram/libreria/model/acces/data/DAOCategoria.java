@@ -8,8 +8,9 @@ import fram.libreria.model.domain.data.Categoria;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
- *
- * @author ASUS
+ * interface DAOCategoria - mapea un Crud básico para la tabla categoria 
+ * @author Collazos Escobar David, Andrés David Muñoz 
+ *         dacoes@unicauca.edu.co, andresdmunoz@unicauca.edu.co
  */
 public interface DAOCategoria extends JpaRepository<Categoria, Long>{
     

@@ -18,14 +18,19 @@ import javax.persistence.Table;
 import lombok.Data;
 
 /**
- *
- * @author David Escobar
+ * Class Categoria 
+ * @author Collazos Escobar David, Andrés David Muñoz 
+ *         dacoes@unicauca.edu.co, andresdmunoz@unicauca.edu.co
  */
 
 @Entity
 @Data
 @Table(name="Categoria")
 public class Categoria implements Serializable {
+    
+    /**
+     *  Atributos  
+     */
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
