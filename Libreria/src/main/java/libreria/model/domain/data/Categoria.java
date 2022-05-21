@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package fram.libreria.model.domain.data;
+package libreria.model.domain.data;
 
 import java.io.Serializable;
 import java.util.List;
@@ -14,42 +14,38 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import lombok.Data;
 
 /**
- *
- * @author David Escobar
+ * Class Categoria 
+ * @author Collazos Escobar David, Andrés David Muñoz 
+ *         dacoes@unicauca.edu.co, andresdmunoz@unicauca.edu.co
  */
+
 @Entity
-@Table(name = "Autor")
 @Data
-public class Autor implements Serializable {
+@Table(name="Categoria")
+public class Categoria implements Serializable {
     
-    private static final long serialVersionUID = 1L; 
+    /**
+     *  Atributos  
+     */
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="aut_id")
+    @Column(name="cat_id")
     private Long id;
     
-    @Column(length=50,name="aut_nombre")
-    private String nombre;
-    
-    @Column(length=50,name="AUT_APELLIDO")
-    private String apellido ;
-    
-    @ManyToOne
-    @JoinColumn(name="aut_pais", nullable=false)
-    private Pais autor_pais;  
+    @Column(length = 50,name="cat_nombre")
+    private String nombre ;
     
     @ManyToMany
     @JoinTable(
-            name = "autorlibro", 
-            joinColumns = @JoinColumn(name = "AUT_ID"), 
+            name = "librocategoria", 
+            joinColumns = @JoinColumn(name = "CAT_ID"), 
             inverseJoinColumns = @JoinColumn(name = "LB_ID")
     )
-    private List<Libro> librosAutor;  
-
+    private List<Libro> librosCateg;  
+    
 }

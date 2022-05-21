@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package fram.libreria.model.domain.data;
+package libreria.model.domain.data;
 
 import java.io.Serializable;
 import java.util.List;
@@ -16,8 +16,9 @@ import javax.persistence.Table;
 import lombok.Data;
 
 /**
- *
- * @author ASUS
+ * Class Pais
+ * @author Collazos Escobar David, Andrés David Muñoz 
+ *         dacoes@unicauca.edu.co, andresdmunoz@unicauca.edu.co
  */
 
 @Entity
@@ -25,6 +26,10 @@ import lombok.Data;
 @Data
 public class Pais implements Serializable{
     private static final long serialVersionUID = 1L; 
+    
+    /**
+     * Atributos
+     */
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
