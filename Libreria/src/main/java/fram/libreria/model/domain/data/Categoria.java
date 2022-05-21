@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package fram.libreria.domain.data;
+package fram.libreria.model.domain.data;
 
 import java.io.Serializable;
 import java.util.List;
@@ -14,7 +14,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import lombok.Data;
 
@@ -22,34 +21,26 @@ import lombok.Data;
  *
  * @author David Escobar
  */
+
 @Entity
-@Table(name = "Autor")
 @Data
-public class Autor implements Serializable {
-    
-    private static final long serialVersionUID = 1L; 
+@Table(name="Categoria")
+public class Categoria implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="aut_id")
+    @Column(name="cat_id")
     private Long id;
     
-    @Column(length=50,name="aut_nombre")
-    private String nombre;
-    
-    @Column(length=50,name="AUT_APELLIDO")
-    private String apellido ;
+    @Column(length = 50,name="cat_nombre")
+    private String nombre ;
     
     @ManyToMany
     @JoinTable(
-            name = "autorlibro", 
-            joinColumns = @JoinColumn(name = "AUT_ID"), 
+            name = "librocategoria", 
+            joinColumns = @JoinColumn(name = "CAT_ID"), 
             inverseJoinColumns = @JoinColumn(name = "LB_ID")
     )
-    private List<Libro> librosAutor;  
+    private List<Libro> librosCateg;  
     
-    
-    @ManyToOne
-    @JoinColumn(name="aut_pais", nullable=false)
-    private Pais autor_pais;  
 }

@@ -4,9 +4,9 @@
  */
 package fram.libreria.Controller;  
 
-import fram.libreria.domain.data.Autor;
-import fram.libreria.service.data.AutorService;
-import fram.libreria.service.data.PaisService;
+import fram.libreria.model.domain.data.Autor;
+import fram.libreria.model.service.data.AutorService;
+import fram.libreria.model.service.data.PaisService;
 import javax.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,9 +52,6 @@ public class AutorController {
         if(errores.hasErrors()){
             return "modificar";
         }
-        
-        // A través de la inyección de dependencias, o mejor dicho, gracias a ella 
-        // si el campo del idPersona es nulo, se crea un nuevo registro, si no se actualiza
         autorService.save(autor);
         return "redirect:/autores"; 
     }
@@ -72,8 +69,6 @@ public class AutorController {
         
         var lista = paisService.listar(); 
         model.addAttribute("paises", lista); 
-        // retorna a modificar porque, si existe un nuevo elemento, 
-        // lo  rellena con los datos del model 
         return "modificar";  
     }
 }

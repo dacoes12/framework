@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package fram.libreria.service.data;
+package fram.libreria.model.service.data;
 
-import fram.libreria.acces.data.DAOPais;
-import fram.libreria.domain.data.Pais;
+import fram.libreria.model.acces.data.DAOPais;
+import fram.libreria.model.domain.data.Pais;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

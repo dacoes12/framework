@@ -1,13 +1,13 @@
 
 
-package fram.libreria.service.data;
+package fram.libreria.model.service.data;
 
-import fram.libreria.domain.data.Autor;
+import fram.libreria.model.domain.data.Autor;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import fram.libreria.acces.data.DAOAutor;
+import fram.libreria.model.acces.data.DAOAutor;
 
 /**
  *
