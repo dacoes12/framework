@@ -30,7 +30,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 @EnableJpaRepositories(
         entityManagerFactoryRef = "dataEntityManagerFactory", 
         transactionManagerRef = "dataTransactionManager", 
-        basePackages = {"fram.libreria.acces.data"}
+        basePackages = {"fram.libreria.model.acces.data"}
 ) 
 public class ConectionDBData {
     @Autowired
@@ -58,7 +58,7 @@ public class ConectionDBData {
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(){
         LocalContainerEntityManagerFactoryBean em  = new LocalContainerEntityManagerFactoryBean();  
         em.setDataSource(userDataSource());
-        em.setPackagesToScan("fram.libreria.domain.data");
+        em.setPackagesToScan("fram.libreria.model.domain.data");
         
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();  
         em.setJpaVendorAdapter(vendorAdapter);

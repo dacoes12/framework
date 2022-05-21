@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
-package fram.libreria.service.data;
+package fram.libreria.model.service.data;
 
-import fram.libreria.domain.data.Autor;
+import fram.libreria.model.domain.data.Autor;
 import java.util.List;
 
 /**
