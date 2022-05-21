@@ -1,11 +1,11 @@
-package fram.libreria.model.service.data;
+package libreria.model.service.data;
 
-import fram.libreria.model.domain.data.Autor;
+import libreria.model.domain.data.Autor;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import fram.libreria.model.acces.data.DAOAutor;
+import libreria.model.acces.data.DAOAutor;
 
 /**
  * class AutorService - establece una clase de tipo service para gestionar las

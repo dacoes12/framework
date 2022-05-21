@@ -2,11 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package fram.libreria.Controller;
+package libreria.Controller;
 
-import fram.libreria.model.domain.data.Autor;
-import fram.libreria.model.service.data.AutorService;
-import fram.libreria.model.service.data.PaisService;
+import libreria.model.domain.data.Autor;
+import libreria.model.service.data.AutorService;
+import libreria.model.service.data.PaisService;
 import javax.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

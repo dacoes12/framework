@@ -1,4 +1,4 @@
-package fram.libreria.Controller;
+package libreria.Controller;
 
 import java.util.Locale;
 import org.springframework.context.annotation.Bean;
